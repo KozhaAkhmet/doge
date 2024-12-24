@@ -1,3 +1,3 @@
-float64 m1_ang
-float64 m2_ang
-float64 m3_ang
+float64 omega
+float64 theta
+float64 phi

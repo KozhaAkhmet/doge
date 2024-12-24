@@ -31,12 +31,11 @@ class LegDriverNode : public rclcpp::Node {
         // Simulate controlling the motors
         // Here you would control the actual hardware, but we will just print the values
         RCLCPP_INFO(this->get_logger(), "Received Motor Commands: ");
-        RCLCPP_INFO(this->get_logger(), "Motor 1 Position: %f", msg->m1_ang);
-        RCLCPP_INFO(this->get_logger(), "Motor 2 Position: %f", msg->m2_ang);
-        RCLCPP_INFO(this->get_logger(), "Motor 3 Position: %f", msg->m3_ang);
+        RCLCPP_INFO(this->get_logger(), "Motor 1 Position: %f", msg->omega);
+        RCLCPP_INFO(this->get_logger(), "Motor 2 Position: %f", msg->theta);
+        RCLCPP_INFO(this->get_logger(), "Motor 3 Position: %f", msg->phi);
 
         motor_group.SetMotorAngles(msg);
-
 
         // ros2 topic pub -r 10 /leg_angles_0 robot_interfaces/msg/LegAngles "{m1_ang: 90 , m2_ang: 90 , m3_ang: 90}"
     }
