@@ -31,9 +31,9 @@ class LegDriverNode : public rclcpp::Node {
         // Simulate controlling the motors
         // Here you would control the actual hardware, but we will just print the values
         RCLCPP_INFO(this->get_logger(), "Received Motor Commands: ");
-        RCLCPP_INFO(this->get_logger(), "Motor 1 Position: %f", msg->omega);
-        RCLCPP_INFO(this->get_logger(), "Motor 2 Position: %f", msg->theta);
-        RCLCPP_INFO(this->get_logger(), "Motor 3 Position: %f", msg->phi);
+        RCLCPP_INFO(this->get_logger(), "Omega: %f", msg->omega);
+        RCLCPP_INFO(this->get_logger(), "Theta: %f", msg->theta);
+        RCLCPP_INFO(this->get_logger(), "Phi: %f", msg->phi);
 
         motor_group.SetMotorAngles(msg);
 
